@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.ahmed.marvelapp.data.response.Character" />
+        <variable
+            name="listener"
+            type="com.ahmed.marvelapp.ui.characters.CharactersClicksListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_8"
+        app:cardElevation="@dimen/_8"
+        android:layout_marginVertical="@dimen/_8"
+        android:layout_marginHorizontal="@dimen/_16"
+        android:onClick="@{()->listener.onCharacterClick(item)}"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:imagePath="@{item.thumbnail.path}"
+                app:imageExtension="@{item.thumbnail.extension}"
+                android:contentDescription="@string/character"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16"
+                android:textAlignment="center"
+                android:text="@{item.name}"
+                android:textColor="@color/title_color"
+                style="@style/FontStyle.Subtitle1"
+                tools:text="Marvel"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

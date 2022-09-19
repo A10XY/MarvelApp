@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ahmed.marvelapp.ui.comic_details.ComicDetailsFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/character_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            app:imagePath="@{viewModel.gotComic.thumbnail.path}"
+            app:imageExtension="@{viewModel.gotComic.thumbnail.extension}"
+            android:contentDescription="@string/character_image" />
+
+        <ImageView
+            android:id="@+id/navigate_up_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circular_shape_with_ripple_effect"
+            android:src="@drawable/ic_backward_arrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/primary_color"
+            android:padding="@dimen/_8"
+            android:elevation="@dimen/_4"
+            android:layout_margin="@dimen/_16"
+            android:onClick="@{()->viewModel.onNavigateUpClickListener()}"
+            android:contentDescription="@string/navigate_up" />
+
+        <ImageView
+            android:id="@+id/share_character_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circular_shape_with_ripple_effect"
+            android:src="@drawable/ic_share"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/primary_color"
+            android:padding="@dimen/_8"
+            android:layout_margin="@dimen/_16"
+            android:elevation="@dimen/_4"
+            android:onClick="@{()->viewModel.onShareComicClickListener()}"
+            android:contentDescription="@string/navigate_up" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comic_details_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/character_image_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#004D40</color>
+    <color name="primary_variant">#004D40</color>
+    <color name="on_primary_color">#FFFFFF</color>
+    <color name="secondary_color">#004D40</color>
+    <color name="secondary_variant_color">#004D40</color>
+    <color name="on_secondary_color">#FFFFFF</color>
+    <color name="title_color">#000000</color>
+    <color name="subtitle_color">#818181</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="positive_color">#68E575</color>
+    <color name="negative_color">#D93D3D</color>
+</resources>

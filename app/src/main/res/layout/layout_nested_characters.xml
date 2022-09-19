@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.ahmed.marvelapp.data.response.Character" />
+        <variable
+            name="listener"
+            type="com.ahmed.marvelapp.ui.nested.characters.NestedCharactersClicksListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_16">
+
+        <LinearLayout
+            android:id="@+id/characters_info_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/_16">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:text="@string/characters"
+                android:textStyle="bold"
+                android:textColor="@color/subtitle_color"
+                style="@style/FontStyle.Subtitle1" />
+
+            <TextView
+                android:id="@+id/show_more_characters_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/show_more"
+                android:textColor="@color/primary_color"
+                android:background="@drawable/ripple_effect"
+                style="@style/FontStyle.Body2"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/characters_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/characters_info_linear_layout"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_8"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

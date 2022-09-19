@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.ahmed.marvelapp.ui.characters.CharactersFragment"
+        android:label="CharactersFragment"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ahmed.marvelapp.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_comicsFragment"
+            app:destination="@id/comicsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.ahmed.marvelapp.ui.character_details.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment" >
+        <argument
+            android:name="character"
+            app:argType="com.ahmed.marvelapp.data.response.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicsFragment"
+        android:name="com.ahmed.marvelapp.ui.comics.ComicsFragment"
+        android:label="ComicsFragment" >
+        <action
+            android:id="@+id/action_comicsFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicDetailsFragment"
+        android:name="com.ahmed.marvelapp.ui.comic_details.ComicDetailsFragment"
+        android:label="ComicDetailsFragment"
+        tools:layout="@layout/fragment_comic_details">
+        <argument
+            android:name="comic"
+            app:argType="com.ahmed.marvelapp.data.response.Comic" />
+    </fragment>
+</navigation>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.ahmed.marvelapp.domain.sealeds.RecyclerViewItem.CharacterDetails" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16"
+        android:layout_marginTop="@dimen/_16"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/character_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/title_color"
+            style="@style/FontStyle.Headline6"
+            tools:text="Marvel Title"/>
+        <TextView
+            android:id="@+id/character_description_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/subtitle_color"
+            android:layout_marginTop="@dimen/_2"
+            style="@style/FontStyle.Body2"
+            tools:text="Marvel description"/>
+
+        <LinearLayout
+            android:id="@+id/visit_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/_16"
+            android:orientation="horizontal"
+            android:background="@drawable/outlined_shape"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_4"
+                android:text="@string/visit"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_color"
+                style="@style/FontStyle.Button"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4"
+                android:src="@drawable/ic_global"
+                app:tint="@color/primary_color"
+                android:contentDescription="@string/visit" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
